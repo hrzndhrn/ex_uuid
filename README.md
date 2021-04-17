@@ -4,7 +4,8 @@
 
 UUID generator according to [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt).
 
-This lib is just a reimplementation of Xy respectively Xyz with a different API.
+This lib is just a reimplementation of [elixir_uuid](https://hex.pm/packages/elixir_uuid)
+respectively [uuid_utils](https://hex.pm/packages/uuid_utils) with a different API.
 If you’re already use `elixir_uuid` or `uuid_utils` there’s no reason to change.
 
 ## Usage
