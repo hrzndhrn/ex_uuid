@@ -1,4 +1,6 @@
 # ExUUID
+[![CI](https://github.com/hrzndhrn/ex_uuid/actions/workflows/elixir.yml/badge.svg)](https://github.com/hrzndhrn/ex_uuid/actions/workflows/elixir.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 UUID generator according to [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt).
 
