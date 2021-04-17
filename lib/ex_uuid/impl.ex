@@ -195,7 +195,7 @@ defmodule ExUUID.Impl do
   def clock_sequence, do: clock_sequence(:crypto.strong_rand_bytes(2))
   defp clock_sequence(<<clock_sequence::size(14), _::bits>>), do: <<clock_sequence::size(14)>>
 
-  def timestamp(), do: timestamp(:os.timestamp())
+  def timestamp, do: timestamp(:os.timestamp())
 
   defp timestamp({megasecond, second, microsecond}) do
     timestamp(megasecond * 1_000_000_000_000 + second * 1_000_000 + microsecond)
