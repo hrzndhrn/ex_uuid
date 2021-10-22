@@ -1,7 +1,7 @@
 # ExUUID
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hrzndhrn/ex_uuid/CI?style=flat-square)
-![Coveralls](https://img.shields.io/coveralls/github/hrzndhrn/ex_uuid?style=flat-square)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![GitHub: CI status](https://img.shields.io/github/workflow/status/hrzndhrn/ex_uuid/CI?style=flat-square)](https://github.com/hrzndhrn/ex_uuid/actions)
+[![Coveralls: coverage](https://img.shields.io/coveralls/github/hrzndhrn/ex_uuid?style=flat-square)](https://coveralls.io/github/hrzndhrn/ex_uuid)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://github.com/hrzndhrn/ex_uuid/blob/main/LICENSE.md)
 
 UUID generator according to [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt).
 
