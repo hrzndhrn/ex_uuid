@@ -34,7 +34,8 @@ defmodule ExUUID.MixProject do
     [
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.13", only: :test, runtime: false}
+      {:excoveralls, "~> 0.13", only: :test, runtime: false},
+      {:recode, "~> 0.5", only: :dev},
     ]
   end
 end
