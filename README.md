@@ -1,5 +1,5 @@
 # ExUUID
-[![GitHub: CI status](https://img.shields.io/github/workflow/status/hrzndhrn/ex_uuid/CI?style=flat-square)](https://github.com/hrzndhrn/ex_uuid/actions)
+[![GitHub: CI status](https://img.shields.io/github/actions/workflow/status/hrzndhrn/ex_uuid/ci.yml?branch=main&style=flat-square)](https://github.com/hrzndhrn/ex_uuid/actions)
 [![Coveralls: coverage](https://img.shields.io/coveralls/github/hrzndhrn/ex_uuid?style=flat-square)](https://coveralls.io/github/hrzndhrn/ex_uuid)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://github.com/hrzndhrn/ex_uuid/blob/main/LICENSE.md)
 
