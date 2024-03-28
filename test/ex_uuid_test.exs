@@ -5,90 +5,90 @@ defmodule ExUUIDTest do
 
   describe "new/2" do
     test "creates version 1 uuid" do
-      assert is_valid_uuid ExUUID.new(:v1)
+      assert valid_uuid?(ExUUID.new(:v1))
       assert uuid_format ExUUID.new(:v1), :default
-      assert is_valid_uuid ExUUID.new(:v1, format: :default)
+      assert valid_uuid?(ExUUID.new(:v1, format: :default))
       assert uuid_format ExUUID.new(:v1, format: :default), :default
     end
 
     test "creates version 1 uuid with format :hex" do
-      assert is_valid_uuid ExUUID.new(:v1, format: :hex)
+      assert valid_uuid?(ExUUID.new(:v1, format: :hex))
       assert uuid_format ExUUID.new(:v1, format: :hex), :hex
     end
 
     test "creates version 1 uuid with format :binary" do
-      assert is_valid_uuid ExUUID.new(:v1, format: :binary)
+      assert valid_uuid?(ExUUID.new(:v1, format: :binary))
       assert uuid_format ExUUID.new(:v1, format: :binary), :binary
     end
 
     test "creates version 4 uuid" do
-      assert is_valid_uuid ExUUID.new(:v4)
+      assert valid_uuid?(ExUUID.new(:v4))
       assert uuid_format ExUUID.new(:v4), :default
-      assert is_valid_uuid ExUUID.new(:v4, format: :default)
+      assert valid_uuid?(ExUUID.new(:v4, format: :default))
       assert uuid_format ExUUID.new(:v4, format: :default), :default
     end
 
     test "creates version 4 uuid with format :hex" do
-      assert is_valid_uuid ExUUID.new(:v4, format: :hex)
+      assert valid_uuid?(ExUUID.new(:v4, format: :hex))
       assert uuid_format ExUUID.new(:v4, format: :hex), :hex
     end
 
     test "creates version 4 uuid with format :binary" do
-      assert is_valid_uuid ExUUID.new(:v4, format: :binary)
+      assert valid_uuid?(ExUUID.new(:v4, format: :binary))
       assert uuid_format ExUUID.new(:v4, format: :binary), :binary
     end
 
     test "creates version 6 uuid" do
-      assert is_valid_uuid ExUUID.new(:v6)
+      assert valid_uuid?(ExUUID.new(:v6))
       assert uuid_format ExUUID.new(:v6), :default
-      assert is_valid_uuid ExUUID.new(:v6, format: :default)
+      assert valid_uuid?(ExUUID.new(:v6, format: :default))
       assert uuid_format ExUUID.new(:v6, format: :default), :default
-      assert is_valid_uuid ExUUID.new(:v6, random: false)
+      assert valid_uuid?(ExUUID.new(:v6, random: false))
     end
 
     test "creates version 6 uuid with format :hex" do
-      assert is_valid_uuid ExUUID.new(:v6, format: :hex)
+      assert valid_uuid?(ExUUID.new(:v6, format: :hex))
       assert uuid_format ExUUID.new(:v6, format: :hex), :hex
     end
 
     test "creates version 6 uuid with format :binary" do
-      assert is_valid_uuid ExUUID.new(:v6, format: :binary)
+      assert valid_uuid?(ExUUID.new(:v6, format: :binary))
       assert uuid_format ExUUID.new(:v6, format: :binary), :binary
     end
   end
 
   describe "new/4" do
     test "creates version 3 uuid" do
-      assert is_valid_uuid ExUUID.new(:v3, namespace(), "abc")
+      assert valid_uuid?(ExUUID.new(:v3, namespace(), "abc"))
       assert uuid_format ExUUID.new(:v3, namespace(), "abc"), :default
-      assert is_valid_uuid ExUUID.new(:v3, namespace(), "abc", format: :default)
+      assert valid_uuid?(ExUUID.new(:v3, namespace(), "abc", format: :default))
       assert uuid_format ExUUID.new(:v3, namespace(), "abc", format: :default), :default
     end
 
     test "creates version 3 uuid with format :hex" do
-      assert is_valid_uuid ExUUID.new(:v3, namespace(), "abc", format: :hex)
+      assert valid_uuid?(ExUUID.new(:v3, namespace(), "abc", format: :hex))
       assert uuid_format ExUUID.new(:v3, namespace(), "abc", format: :hex), :hex
     end
 
     test "creates version 3 uuid with format :binary" do
-      assert is_valid_uuid ExUUID.new(:v3, namespace(), "abc", format: :binary)
+      assert valid_uuid?(ExUUID.new(:v3, namespace(), "abc", format: :binary))
       assert uuid_format ExUUID.new(:v3, namespace(), "abc", format: :binary), :binary
     end
 
     test "creates version 5 uuid" do
-      assert is_valid_uuid ExUUID.new(:v5, namespace(), "abc")
+      assert valid_uuid?(ExUUID.new(:v5, namespace(), "abc"))
       assert uuid_format ExUUID.new(:v5, namespace(), "abc"), :default
-      assert is_valid_uuid ExUUID.new(:v5, namespace(), "abc", format: :default)
+      assert valid_uuid?(ExUUID.new(:v5, namespace(), "abc", format: :default))
       assert uuid_format ExUUID.new(:v5, namespace(), "abc", format: :default), :default
     end
 
     test "creates version 5 uuid with format :hex" do
-      assert is_valid_uuid ExUUID.new(:v5, namespace(), "abc", format: :hex)
+      assert valid_uuid?(ExUUID.new(:v5, namespace(), "abc", format: :hex))
       assert uuid_format ExUUID.new(:v5, namespace(), "abc", format: :hex), :hex
     end
 
     test "creates version 5 uuid with format :binary" do
-      assert is_valid_uuid ExUUID.new(:v5, namespace(), "abc", format: :binary)
+      assert valid_uuid?(ExUUID.new(:v5, namespace(), "abc", format: :binary))
       assert uuid_format ExUUID.new(:v5, namespace(), "abc", format: :binary), :binary
     end
 
@@ -163,19 +163,19 @@ defmodule ExUUIDTest do
   describe "to_binary/1" do
     test "returns the uuid as binary from :default" do
       assert {:ok, uuid} = :v6 |> ExUUID.new() |> ExUUID.to_binary()
-      assert is_valid_uuid uuid
+      assert valid_uuid?(uuid)
       assert uuid_format uuid, :binary
     end
 
     test "returns the uuid as binary from :hex" do
       assert {:ok, uuid} = :v1 |> ExUUID.new(format: :hex) |> ExUUID.to_binary()
-      assert is_valid_uuid uuid
+      assert valid_uuid?(uuid)
       assert uuid_format uuid, :binary
     end
 
     test "returns the uuid as binary from :binary" do
       assert {:ok, uuid} = :v1 |> ExUUID.new(format: :binary) |> ExUUID.to_binary()
-      assert is_valid_uuid uuid
+      assert valid_uuid?(uuid)
       assert uuid_format uuid, :binary
     end
   end
@@ -183,31 +183,31 @@ defmodule ExUUIDTest do
   describe "to_string/2" do
     test "returns the uuid as string, format: :default" do
       assert {:ok, uuid} = :v1 |> ExUUID.new(format: :binary) |> ExUUID.to_string()
-      assert is_valid_uuid uuid
+      assert valid_uuid?(uuid)
       assert uuid_format uuid, :default
     end
 
     test "returns the uuid as string, format: :hex" do
       assert {:ok, uuid} = :v1 |> ExUUID.new(format: :binary) |> ExUUID.to_string(format: :hex)
-      assert is_valid_uuid uuid
+      assert valid_uuid?(uuid)
       assert uuid_format uuid, :hex
     end
   end
 
-  defp is_valid_uuid(<<_::128>> = uuid) do
-    with {:ok, str} <- ExUUID.to_string(uuid), do: is_valid_uuid(str) && ExUUID.valid?(str)
+  defp valid_uuid?(<<_::128>> = uuid) do
+    with {:ok, str} <- ExUUID.to_string(uuid), do: valid_uuid?(str) && ExUUID.valid?(str)
   end
 
-  defp is_valid_uuid(<<_::256>> = uuid) do
+  defp valid_uuid?(<<_::256>> = uuid) do
     Regex.match?(~r/[0-9,a-f]{32}/, uuid) && ExUUID.valid?(uuid)
   end
 
-  defp is_valid_uuid(<<_::288>> = uuid) do
+  defp valid_uuid?(<<_::288>> = uuid) do
     regex = ~r/[0-9,a-f]{8}-[0-9,a-f]{4}-[0-9,a-f]{4}-[0-9,a-f]{4}-[0-9,a-f]{12}/
     Regex.match?(regex, uuid) && ExUUID.valid?(uuid)
   end
 
-  defp is_valid_uuid(_uuid), do: false
+  defp valid_uuid?(_uuid), do: false
 
   defp uuid_format(<<_uuid::128>>, :binary), do: true
   defp uuid_format(<<_uuid::256>>, :hex), do: true
