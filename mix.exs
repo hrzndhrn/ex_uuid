@@ -5,7 +5,7 @@ defmodule ExUUID.MixProject do
     [
       app: :ex_uuid,
       version: "0.1.0",
-      elixir: "~> 1.10",
+      elixir: "~> 1.12",
       name: "ExUUID",
       description: "UUID generator according to RFC 4122",
       start_permanent: Mix.env() == :prod,
