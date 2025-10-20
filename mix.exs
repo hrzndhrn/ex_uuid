@@ -10,8 +10,13 @@ defmodule ExUUID.MixProject do
       description: "UUID generator according to RFC 4122",
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: preferred_cli_env(),
       deps: deps()
+    ]
+  end
+
+  def cli do
+    [
+      preferred_envs: preferred_cli_env()
     ]
   end
 
