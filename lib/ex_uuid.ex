@@ -60,7 +60,7 @@ defmodule ExUUID do
   iex> ExUUID.new(:v1, format: :hex)
   "58044c1e51e111ebb72d0982c5a64d6d"
 
-  iex> ExUUID.new(:v1, fromat: :binary)
+  iex> ExUUID.new(:v1, format: :binary)
   <<88, 4, 76, 30, 81, 225, 17, 235, 183, 45, 9, 130, 197, 166, 77, 109>>
 
   iex> ExUUID.new(:v4)
